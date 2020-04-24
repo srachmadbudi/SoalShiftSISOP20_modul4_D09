@@ -20,7 +20,48 @@
 
 static  const  char *dirpath = "/home/boodboy/Documents";
 
-  
+//karakter untuk enkripsi
+char list[100] = "9(ku@AW1[Lmvgax6q`5Y2Ry?+sF!^HKQiBXCUSe&0M.b%rI'7d)o4~VfZ*{#:}ETt$3J-zpc]lnh8,GwP_ND|jO";
+
+//fungsi enkripsi, encrypt adalah string yg akan dienkripsi
+void enc(char* encrypt)
+{
+	
+	if(!strcmp(encrypt,".") || !strcmp(encrypt,"..")) return;
+	
+	for(int i=0;i<strlen(encrypt);i++)
+	{
+		for(int j=0;j<strlen(list);j++)
+		{
+			if(encrypt[i]==list[j])
+			{
+				encrypt[i] = list[(j+10)%strlen(list)];
+				break;
+			}
+		}
+	}
+	printf("Hasil enkripsi : %s\n", encrypt);
+}
+
+//fungsi dekripsi, decrypt adalah string yg akan didekripsi
+void dec(char* decrypt)
+{
+	
+	if(!strcmp(decrypt,".") || !strcmp(decrypt,"..")) return;
+	
+	for(int i=0;i<strlen(decrypt);i++)
+	{
+		for(int j=0;j<strlen(list);j++)
+		{
+			if(decrypt[i]==list[j])
+			{
+				decrypt[i] = list[(strlen(list)-10)%strlen(list)];
+				break;
+			}
+		}
+	}
+	printf("Hasil dekripsi : %s\n", decrypt);
+}
 
 static  int  xmp_getattr(const char *path, struct stat *stbuf)
 
