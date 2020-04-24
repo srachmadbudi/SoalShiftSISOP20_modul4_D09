@@ -205,7 +205,7 @@ res = -errno;
 
 close(fd);
 
-return res;
+    return res;
 
 }
 
@@ -213,22 +213,20 @@ return res;
 
 static struct fuse_operations xmp_oper = {
 
-.getattr = xmp_getattr,
+    .getattr = xmp_getattr,
 
-.readdir = xmp_readdir,
+    .readdir = xmp_readdir,
 
-.read = xmp_read,
+    .read = xmp_read,
 
 };
 
   
 
-int  main(int  argc, char *argv[])
+int  main(int  argc, char *argv[]) {
 
-{
+    umask(0);
 
-umask(0);
-
-return fuse_main(argc, argv, &xmp_oper, NULL);
+    return fuse_main(argc, argv, &xmp_oper, NULL);
 
 }
