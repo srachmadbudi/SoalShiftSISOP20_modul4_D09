@@ -1,6 +1,6 @@
 # SoalShiftSISOP20_modul4_D09
 ```
-Khofifah Nur Laela      051118400000
+Khofifah Nur Laela      05111840000025
 Rachmad Budi Santoso    05111840000122
 ```
 ## 1. Enkripsi versi 1:
